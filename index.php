@@ -1,8 +1,11 @@
 <?php
 
 $routes = [
-    '' => 'home.php'
+    '' => 'home.php',
+    'about' => 'about.php',
+    'contact' => 'contact.php'
 ];
+
 
 $uri = trim($_SERVER['REQUEST_URI'], '/');
 
