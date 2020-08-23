@@ -4,9 +4,9 @@ require 'models/Router.php';
 
 $router = new Router();
 
-$router->register('', 'home.php');
-$router->register('about', 'about.php');
-$router->register('contact', 'contact.php');
+$router->register('', 'controllers/index.php');
+$router->register('about', 'controllers/about.php');
+$router->register('contact', 'controllers/contact.php');
 
 $uri = trim($_SERVER['REQUEST_URI'], '/');
 
