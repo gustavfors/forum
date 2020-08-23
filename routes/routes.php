@@ -1,6 +1,6 @@
 <?php
 
-$router->register('', 'controllers/index.php');
-$router->register('about', 'controllers/about.php');
-$router->register('contact', 'controllers/contact.php');
-$router->register('test', 'controllers/test.php');
+$router->get('', 'controllers/index.php');
+$router->get('about', 'controllers/about.php');
+$router->get('contact', 'controllers/contact.php');
+$router->post('test', 'controllers/test.php');
