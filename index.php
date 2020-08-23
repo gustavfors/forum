@@ -1,10 +1,6 @@
 <?php
 
-require 'models/Router.php';
-
-$router = new Router();
-
-require 'routes/routes.php';
+require 'bootstrap/bootstrap.php';
 
 $uri = trim($_SERVER['REQUEST_URI'], '/');
 
