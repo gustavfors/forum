@@ -2,4 +2,4 @@
 
 require 'bootstrap/bootstrap.php';
 
-require $router->direct(Request::uri(), Request::method());
+$router->direct(Request::uri(), Request::method());

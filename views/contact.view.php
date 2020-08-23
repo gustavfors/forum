@@ -1,1 +1,1 @@
-<p>This is the <?= $name; ?> page</p>
+<p>contact</p>
