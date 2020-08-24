@@ -4,7 +4,11 @@ class PageController
 {   
     public function index()
     {
-        require 'views/index.view.php';
+        $posts = App::get('database')->selectAll('posts');
+
+        return view('index', [
+            'posts' => $posts
+        ]);
     }
 
     public function about()
