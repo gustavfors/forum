@@ -9,6 +9,7 @@ require 'models/Router.php';
 require 'models/Request.php';
 require 'models/Connection.php';
 require 'models/QueryBuilder.php';
+require 'models/Post.php';
 
 //App setup
 App::bind('database', new QueryBuilder(Connection::make()));

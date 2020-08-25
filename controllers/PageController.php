@@ -4,7 +4,13 @@ class PageController
 {   
     public function index()
     {
-        $posts = App::get('database')->selectAll('posts');
+        $posts = App::get('database')->query(
+            "SELECT * FROM posts WHERE id = :id",
+            "Post",
+            [
+                ':id' => 1
+            ]
+        );
 
         return view('index', [
             'posts' => $posts
