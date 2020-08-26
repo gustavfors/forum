@@ -11,4 +11,11 @@ class Request
     {
         return $_SERVER['REQUEST_METHOD'];
     }
+
+    public static function get($name)
+    {
+        if (isset($_GET[$name])) {
+           return $_GET[$name];
+        }
+    }
 }

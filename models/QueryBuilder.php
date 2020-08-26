@@ -9,11 +9,11 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function query($sql, $class, $params = [])
+    public function query($sql, $params = [])
     {
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
 
-        return $stmt->fetchAll(PDO::FETCH_CLASS, $class);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

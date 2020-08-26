@@ -4,16 +4,27 @@ class PageController
 {   
     public function index()
     {
+
+        $page = Request::get('page') ?? 0;
+
+        $limit = 3;
+        $offset = ($page - 1) * 3;
+
+        $pages = ceil(App::get('database')->query(
+            "SELECT COUNT(id) as 'total_pages' FROM posts"
+        )[0]->total_pages / 3);
+        
         $posts = App::get('database')->query(
-            "SELECT * FROM posts WHERE id = :id",
-            "Post",
+            "SELECT * FROM posts LIMIT :limit OFFSET :offset",
             [
-                ':id' => 1
+                ':limit' => $limit,
+                ':offset' => $offset
             ]
         );
 
         return view('index', [
-            'posts' => $posts
+            'posts' => $posts,
+            'pages' => $pages
         ]);
     }
 
